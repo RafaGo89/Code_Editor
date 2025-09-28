@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editor</title>
+</head>
+<body>
+
+    <header>
+        <div class="container row">
+            <div class="brand">
+                <div class="logo"></div>
+                <div class="title">Code Editor - Live in the browser</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <button class="btn secondary" id="save_btn" title="Save work locally"><span>Save</span></button>
+            <button class="btn secondary" id="load_btn" title="Load work file"><span>Load</span></button>
+            <input type="file" id="open_file" accept="application/json" hidden>
+        </div>
+    </header>
+
+    <main>
+        <aside class="card panel stack">
+            <h2>Task / Assigment</h2>
+
+            <textarea class="textarea" id="assigment" placeholder="Write the task description here..."></textarea>
+
+            <div class="stack">
+                <label for="test_area">Validation test (JavaScript only - optional)</label>
+                <textarea class="text" id="test_area" placeholder="Write simple tests to append after the students' code to check the solution..."></textarea>
+            </div>
+
+            <div class="muted">
+                Tip: <span class="kbd">Ctrl <span> + </span class="kbd">S</span> to save,
+                <span class="kbd">Ctrl<span> + </span class="kbd">Enter</span> to run.
+            </div>
+        </aside>
+
+        <section class="stack" id="web_only">
+            <div class="stack panel card" id="web_editors">
+                <div class="row">
+                    <h2>HTML / CSS / JavaScript</h2>
+                    <div class="class">
+                        <button class="btn ok" id="run_web">Run</button>
+                        <button class="btn secondary" id="open_preview">Open preview in a new window.</button>
+                    </div>
+                </div>
+
+                <div class="tans" id="web_taps" role="tablist" aria-label="web editors">
+                    <button class="tab active" role="tap" aria-selected="true" tabindex="0" data-pane="html"="">HTML</button>
+                    <button class="tab" role="tab" aria-selected="false" tabindex="-1" data-pane="css"">css</button>
+                    <button class="tap" role="tab" aria-selected="false" tabindex="-1" data-pane="javascript">JavaScript</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>
