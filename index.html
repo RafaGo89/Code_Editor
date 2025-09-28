@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Editor</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -54,9 +55,43 @@
                     <button class="tab" role="tab" aria-selected="false" tabindex="-1" data-pane="css"">css</button>
                     <button class="tap" role="tab" aria-selected="false" tabindex="-1" data-pane="javascript">JavaScript</button>
                 </div>
+
+                <div class="editor wrap" data-pane="html">
+                    <div class="editor" id="ed_html"></div>
+                </div>
+
+                <div class="editor wrap" data-pane="css" hidden>
+                    <div class="editor" id="ed_css"></div>
+                </div>
+
+                <div class="editor wrap" data-pane="javascript" hidden>
+                    <div class="editor" id="ed_javascript"></div>
+                </div>
+
+                <div class="stack">
+                    <h3>Preview</h3>
+                    <iframe class="preview" id="preview" sandbox="allow-scripts allow-same-origin allow-modals allow-forms"></iframe> 
+                </div>
             </div>
         </section>
+
+        <aside class="card panel stack">
+            <h2>Output</h2>
+            <div class="out" id="output" aria-live="polite"></div>
+            <div class="row">
+                <button class="btn warn" id="run_tests">Run with tests</button>
+                <button class="btn secondary" id="clear_log">Clear log</button>
+            </div>
+            <h3>Notes</h3>
+            <ul class="muted">
+                <li>Everything runs inside the browser in a sandbox</li>
+                <li>You can save the work as a JSON file and restore it...</li>
+            </ul>
+        </aside>
     </main>
+
+    <div class="footer">&copy; 2025 - All rights reserved.</div>
     
+    <script src="script.js"></script>
 </body>
 </html>
